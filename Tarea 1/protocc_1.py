@@ -2,6 +2,8 @@ import string
 
 # Primer metodo "count_char"
 # La funcion count_char recibe los dos parametros solicitados Cadena y Caracter
+
+
 def count_char(Cadena, Caracter):
     # Se verifica si Cadena y caracter son un string
     if isinstance(Cadena, str) and isinstance(Caracter, str):
@@ -9,8 +11,8 @@ def count_char(Cadena, Caracter):
         for i in range(len(Cadena)):
             # Revisa caracter por caracter de cadena o caracter para ver
             # si esta incluido en las letras y numeros ascii
-            if Cadena[i] and Caracter in string.ascii_letters + string.digits + "Ñ" + "ñ":
-
+            validos = string.ascii_letters + string.digits + "Ññ"
+            if Cadena[i] in validos and Caracter in validos:
                 continue
 
             else:
@@ -30,7 +32,7 @@ def count_char(Cadena, Caracter):
 
     if len(Caracter) > 1:
         # Codigo de error unico para cuando hay mas de 1 caracter
-        print ("E-LENCHAR\nNone")
+        print("E-LENCHAR\nNone")
         return
 
     else:
@@ -52,3 +54,4 @@ def count_char(Cadena, Caracter):
 
 
 count_char("ueuew", "p")
+
